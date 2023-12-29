@@ -1,0 +1,10 @@
+.topNav {
+    display: flex;
+    background-color: #23856D;
+    color: #fff;
+    padding: 16px 32px;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: none;
+  }
+  
