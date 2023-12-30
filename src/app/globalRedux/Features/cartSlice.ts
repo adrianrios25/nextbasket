@@ -1,16 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+type initialStateType = {
+    cart: any
+}
+
+const initialState: initialStateType = {
+    cart: []
+}
+
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: {
-    cart: [{
-        id: "",
-        quantity: 0
-    }],
-  },
+  initialState,
   reducers: {
     addToCart: (state, action) => {
-      const itemInCart = state.cart.find((item) => item.id === action.payload.id);
+      const itemInCart = state.cart.find((item:any) => item.id === action.payload.id);
       if (itemInCart) {
         itemInCart.quantity++;
       } else {
@@ -18,14 +21,14 @@ const cartSlice = createSlice({
       }
     },
     incrementQuantity: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload);
+      const item = state.cart.find((item:any) => item.id === action.payload);
       if(item){
         item.quantity++;
       }
       
     },
     decrementQuantity: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload);
+      const item = state.cart.find((item:any) => item.id === action.payload);
       if(item){
       if (item.quantity === 1) {
         item.quantity = 1
@@ -34,7 +37,7 @@ const cartSlice = createSlice({
       }}
     },
     removeItem: (state, action) => {
-      const removeItem = state.cart.filter((item) => item.id !== action.payload);
+      const removeItem = state.cart.filter((item:any) => item.id !== action.payload);
       state.cart = removeItem;
     },
   },

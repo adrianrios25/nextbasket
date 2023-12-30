@@ -23,6 +23,7 @@ import unsplash_QANOF9iJlFs from "../../../../public/product/unsplash_QANOF9iJlF
 import Snackbar from "@mui/material/Snackbar";
 import CloseIcon from "@mui/icons-material/Close";
 import { addToCart } from "@/app/globalRedux/Features/cartSlice";
+import { addToWishlist } from "@/app/globalRedux/Features/wishlistSlice";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 function Product({ params }: { params: { id: string } }) {
@@ -65,6 +66,20 @@ function Product({ params }: { params: { id: string } }) {
   const handleAddToCart = async (item: any, message: string) => {
     await dispatch(
       addToCart({
+        id: item.id,
+        title: item.title,
+        image: item.image,
+        price: item.price,
+      })
+    );
+
+    setOpenSnackBar(true);
+    setSnackbarMessage(message);
+  };
+
+  const handleAddToWishlist = async (item: any, message: string) => {
+    await dispatch(
+      addToWishlist({
         id: item.id,
         title: item.title,
         image: item.image,
@@ -228,7 +243,15 @@ function Product({ params }: { params: { id: string } }) {
                 sx={{ mx: "5px" }}
                 aria-label="add to shopping cart"
                 onClick={() => {
-                  handleOpenSnackBar("Item added to wishlist");
+                  handleAddToWishlist(
+                    {
+                      id: product.id,
+                      title: product.title,
+                      image: product.thumbnail,
+                      price: product.price,
+                    },
+                    "Item added to wishlist"
+                  );
                 }}
               >
                 <FavoriteBorderOutlinedIcon />

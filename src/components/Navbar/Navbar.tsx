@@ -19,6 +19,8 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Modal from "@mui/material/Modal";
 import CartItem from "../Cart/CartItem";
+import WishlistItem from "../Wishlist/WishlistItem";
+
 const pages = ["Products", "Pricing", "Blog"];
 
 const style = {
@@ -26,11 +28,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 720,
+  width: { xs: "80%", md: "720" },
+  height: { xs: "80%" },
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  overflow: "scroll",
 };
 
 const getTotal = (cart: any) => {
@@ -44,11 +48,15 @@ const getTotal = (cart: any) => {
 };
 
 function Navbar() {
-  const dispatch = useDispatch<AppDispatch>();
   const cart = useSelector((state: RootState) => state.cart.cart);
+  const wishlist = useSelector((state: RootState) => state.wishlist.wishlist);
   const [open, setOpen] = useState(false);
+  const [openModalWL, setOpenModalWL] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleOpenModalWL = () => setOpenModalWL(true);
+  const handleCloseModalWL = () => setOpenModalWL(false);
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -129,15 +137,70 @@ function Navbar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              marginThreshold={0}
               sx={{
                 display: { xs: "block", md: "none" },
+                width: "100%",
+                maxWidth: "100%",
+                left: 0,
+                right: 0,
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>
+                <Typography textAlign="center" width={"100%"}>
+                  Home
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center" width={"100%"}>
+                  Shop
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center" width={"100%"}>
+                  About
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center" width={"100%"}>
+                  Blog
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center" width={"100%"}>
+                  Contact
+                </Typography>
+              </MenuItem>
+
+              <MenuItem>
+                <Typography textAlign="center" width={"100%"}>
+                  Pages
+                </Typography>
+              </MenuItem>
+
+              <MenuItem>
+                <Button sx={{ margin: "auto" }}>
+                  <span className="textIconAlign">
+                    <PersonOutlineOutlinedIcon />
+                    Login / Register
+                  </span>
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button sx={{ margin: "auto" }}>
+                  <SearchOutlinedIcon />
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button sx={{ margin: "auto" }} onClick={handleOpen}>
+                  <ShoppingCartOutlinedIcon />
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button sx={{ margin: "auto" }} onClick={handleOpenModalWL}>
+                  <FavoriteBorderOutlinedIcon />
+                </Button>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -200,7 +263,7 @@ function Navbar() {
               <Button sx={rightMenuButtonXS} onClick={handleOpen}>
                 <ShoppingCartOutlinedIcon />
               </Button>
-              <Button sx={rightMenuButtonXS}>
+              <Button sx={rightMenuButtonXS} onClick={handleOpenModalWL}>
                 <FavoriteBorderOutlinedIcon />
               </Button>
             </Box>
@@ -269,6 +332,36 @@ function Navbar() {
                 </Typography>
               </Box>
             </Box>
+          </Box>
+        </>
+      </Modal>
+
+      <Modal
+        open={openModalWL}
+        onClose={handleCloseModalWL}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <>
+          <Box sx={style}>
+            <Typography
+              id="modal-modal-title"
+              variant="h2"
+              component="h2"
+              fontSize={"32px"}
+              fontWeight={"700"}
+              borderBottom={"1px solid #212121"}
+            >
+              Wishlist
+            </Typography>
+            {wishlist?.map((item: any) => (
+              <WishlistItem
+                key={item.id}
+                id={item.id}
+                image={item.image}
+                title={item.title}
+              />
+            ))}
           </Box>
         </>
       </Modal>
