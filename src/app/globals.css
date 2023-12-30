@@ -27,3 +27,30 @@ p {
 .flex {
     display: flex;
 }
+
+.ellipse{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.bg-blue{
+    background-color: #23A6F0;
+}
+.bg-green{
+    background-color: #2DC071;
+}
+
+.bg-orange{
+    background-color: #E77C40;
+}
+
+.bg-black{
+    background-color: #252B42;
+}
+.icon-btn-bordered{
+    border: 1px solid #E8E8E8 !important; 
+    color: #252B42 !important;
+}

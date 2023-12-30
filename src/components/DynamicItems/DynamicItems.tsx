@@ -7,7 +7,8 @@ import {
 } from "@/app/globalRedux/Features/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
-import Link from "next/link";
+
+import { default as MUILink } from "@mui/material/Link";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -35,7 +36,6 @@ function DynamicItems({
 
   function getDiscountPrice(price: number, discountPercent: number) {
     const discountDecimal = discountPercent / 100.0;
-    console.log(price, discountPercent);
     const total = price - price * discountDecimal;
     return total.toFixed(2);
   }
@@ -53,7 +53,7 @@ function DynamicItems({
               sx={{ height: "100%", margin: "8px" }}
               key={product.title}
             >
-              <Link href={`/products/${product.id}`} replace={true}>
+              <MUILink href={`/products/${product.id}`}>
                 <Card sx={{ maxWidth: 345, height: "100%", boxShadow: "none" }}>
                   <CardActionArea>
                     <CardMedia
@@ -118,7 +118,7 @@ function DynamicItems({
                     </CardContent>
                   </CardActionArea>
                 </Card>
-              </Link>
+              </MUILink>
             </Box>
           ))}
         </Box>
