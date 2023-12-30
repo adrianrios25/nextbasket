@@ -26,12 +26,23 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 720,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
+
+const getTotal = (cart: any) => {
+  let totalQuantity = 0;
+  let totalPrice = 0;
+  cart.forEach((item: any) => {
+    totalQuantity += item.quantity;
+    totalPrice += item.price * item.quantity;
+  });
+  return { totalPrice, totalQuantity };
+};
+
 function Navbar() {
   const dispatch = useDispatch<AppDispatch>();
   const cart = useSelector((state: RootState) => state.cart.cart);
@@ -202,21 +213,64 @@ function Navbar() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Shopping Cart
-          </Typography>
-          {cart?.map((item) => (
-            <CartItem
-              key={item.id}
-              id={item.id}
-              image={item.image}
-              title={item.title}
-              price={item.price}
-              quantity={item.quantity}
-            />
-          ))}
-        </Box>
+        <>
+          <Box sx={style}>
+            <Typography
+              id="modal-modal-title"
+              variant="h2"
+              component="h2"
+              fontSize={"32px"}
+              fontWeight={"700"}
+              borderBottom={"1px solid #212121"}
+            >
+              Shopping Cart
+            </Typography>
+            {cart?.map((item: any) => (
+              <CartItem
+                key={item.id}
+                id={item.id}
+                image={item.image}
+                title={item.title}
+                price={item.price}
+                quantity={item.quantity}
+              />
+            ))}
+
+            <Box
+              marginTop="24px"
+              padding="8px"
+              gridTemplateColumns="repeat(12, 1fr)"
+              gap={1}
+              sx={{
+                display: { xs: "block", md: "grid" },
+              }}
+            >
+              <Box gridColumn="span 6">
+                <Typography
+                  variant="subtitle2"
+                  fontWeight={700}
+                  color="#252B42"
+                  fontSize="16px"
+                  marginBottom={"14px"}
+                >
+                  ORDER SUMMARY
+                </Typography>
+              </Box>
+              <Box gridColumn="span 6" textAlign={"right"}>
+                <Typography
+                  variant="subtitle2"
+                  fontWeight={400}
+                  color="#252B42"
+                  fontSize="16px"
+                  marginBottom={"14px"}
+                >
+                  SUBTOTAL({getTotal(cart).totalQuantity}):{" "}
+                  <strong>${getTotal(cart).totalPrice}</strong>
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+        </>
       </Modal>
     </AppBar>
   );
