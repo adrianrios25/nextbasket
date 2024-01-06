@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import TopItems from "@/components/TopItems/TopItems";
 import DynamicItems from "@/components/DynamicItems/DynamicItems";
 import Services from "@/components/Services/Services";
+import FeaturedPost from "@/components/FeaturedPost/FeaturedPost";
 export default function HomePage() {
   return (
     <>
@@ -40,6 +41,7 @@ export default function HomePage() {
         </Typography>
         <DynamicItems showLoadmoreBtn={true} />
         <Services />
+        <FeaturedPost />
       </Box>
     </>
   );

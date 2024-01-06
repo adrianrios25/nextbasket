@@ -6,7 +6,6 @@ import {
   getMoreProducts,
 } from "@/app/globalRedux/Features/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
-import Image from "next/image";
 
 import { default as MUILink } from "@mui/material/Link";
 import Button from "@mui/material/Button";
@@ -40,7 +39,7 @@ function DynamicItems({
     return total.toFixed(2);
   }
   return (
-    <Box sx={{ mt: "80px", mb: "24px" }}>
+    <Box sx={{ mt: "80px", mb: "24px", mx: "56px" }}>
       {products?.payload?.products && (
         <Box
           sx={{ display: { xs: "block", md: "grid" }, mt: "80px" }}
@@ -58,7 +57,7 @@ function DynamicItems({
                   <CardActionArea>
                     <CardMedia
                       component="img"
-                      height="140"
+                      height="240"
                       image={product.images[0]}
                       alt={product.description}
                     />
