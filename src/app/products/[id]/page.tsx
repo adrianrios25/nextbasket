@@ -26,6 +26,7 @@ import { addToCart } from "@/app/globalRedux/Features/cartSlice";
 import { addToWishlist } from "@/app/globalRedux/Features/wishlistSlice";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Rating from "@mui/material/Rating";
 function Product({ params }: { params: { id: string } }) {
   const dispatch = useDispatch<AppDispatch>();
   const product = useSelector(
@@ -198,7 +199,7 @@ function Product({ params }: { params: { id: string } }) {
               fontSize="16px"
               marginBottom={"14px"}
             >
-              {product.rating}
+              <Rating name="read-only" value={product.rating} readOnly />
             </Typography>
             <Typography
               variant="subtitle2"

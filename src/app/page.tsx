@@ -7,6 +7,8 @@ import TopItems from "@/components/TopItems/TopItems";
 import DynamicItems from "@/components/DynamicItems/DynamicItems";
 import Services from "@/components/Services/Services";
 import FeaturedPost from "@/components/FeaturedPost/FeaturedPost";
+import Feedback from "@/components/Feedback/Feedback";
+import InstaWidget from "@/components/InstaWidget/InstaWidget";
 export default function HomePage() {
   return (
     <>
@@ -42,6 +44,18 @@ export default function HomePage() {
         <DynamicItems showLoadmoreBtn={true} />
         <Services />
         <FeaturedPost />
+        <Box
+          sx={{ display: { xs: "block", md: "grid" }, mt: "80px" }}
+          gridTemplateColumns="repeat(12, 1fr)"
+          gap={1}
+        >
+          <Box gridColumn="span 6" sx={{ height: "100%" }}>
+            <Feedback />
+          </Box>
+          <Box gridColumn="span 6" sx={{ height: "100%" }}>
+            <InstaWidget />
+          </Box>
+        </Box>
       </Box>
     </>
   );

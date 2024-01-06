@@ -230,18 +230,28 @@ function Navbar() {
             }}
           >
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <Button sx={menuButtonXS}>Home</Button>
-              <Button sx={menuButtonXS}>
+              <Button href="/" sx={menuButtonXS}>
+                Home
+              </Button>
+              <Button href="#" sx={menuButtonXS}>
                 <span className="textIconAlign">
                   Shop <KeyboardArrowDownOutlinedIcon />
                 </span>
               </Button>
 
-              <Button sx={menuButtonXS}>About</Button>
+              <Button href="#" sx={menuButtonXS}>
+                About
+              </Button>
 
-              <Button sx={menuButtonXS}>Blog</Button>
-              <Button sx={menuButtonXS}>Contact</Button>
-              <Button sx={menuButtonXS}>Pages</Button>
+              <Button href="#" sx={menuButtonXS}>
+                Blog
+              </Button>
+              <Button href="#" sx={menuButtonXS}>
+                Contact
+              </Button>
+              <Button href="#" sx={menuButtonXS}>
+                Pages
+              </Button>
             </Box>
 
             <Box

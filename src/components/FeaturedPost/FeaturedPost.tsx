@@ -16,7 +16,7 @@ import chartIcon from "../../../public/icons/chart-outlined.svg";
 function Services() {
   return (
     <>
-      <Box sx={{ mt: "192px", mb: "24px", mx: "56px" }}>
+      <Box sx={{ mt: "192px", mb: "112px", mx: "56px" }}>
         <Typography
           variant="subtitle2"
           fontWeight={700}
@@ -94,7 +94,7 @@ function Services() {
                     color="#252B42"
                     fontSize="20px"
                   >
-                    Loudest à la Madison #1 (L'integral)
+                    Loudest à la Madison #1 (L&apos;integral)
                   </Typography>
                   <Typography
                     variant="subtitle2"
@@ -237,7 +237,7 @@ function Services() {
                     color="#252B42"
                     fontSize="20px"
                   >
-                    Loudest à la Madison #1 (L'integral)
+                    Loudest à la Madison #1 (L&apos;integral)
                   </Typography>
                   <Typography
                     variant="subtitle2"
@@ -380,7 +380,7 @@ function Services() {
                     color="#252B42"
                     fontSize="20px"
                   >
-                    Loudest à la Madison #1 (L'integral)
+                    Loudest à la Madison #1 (L&apos;integral)
                   </Typography>
                   <Typography
                     variant="subtitle2"
