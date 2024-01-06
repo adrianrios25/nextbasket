@@ -28,8 +28,38 @@ function Feedback() {
           marginBottom: "20px",
         }}
       />
-
-      <Rating name="read-only" value={4} readOnly />
+      <Box sx={{ marginBottom: "20px" }}>
+        <Rating name="read-only" value={4} readOnly />
+      </Box>
+      <Typography
+        variant="subtitle2"
+        fontWeight={700}
+        textAlign="center"
+        color="#737373"
+        fontSize="14px"
+        marginBottom={"20px"}
+      >
+        Slate helps you see how many more days you need to work to reach your
+        financial goal.
+      </Typography>
+      <Typography
+        variant="subtitle2"
+        fontWeight={700}
+        textAlign="center"
+        color="#23A6F0"
+        fontSize="14px"
+      >
+        Regina Miles
+      </Typography>
+      <Typography
+        variant="subtitle2"
+        fontWeight={700}
+        textAlign="center"
+        color="#252B42"
+        fontSize="14px"
+      >
+        Designer
+      </Typography>
     </Box>
   );
 }
