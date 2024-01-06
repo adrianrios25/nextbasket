@@ -105,8 +105,8 @@ function Services() {
                     marginTop="8px"
                     marginBottom="8px"
                   >
-                    We focus on ergonomics and meeting you where you work. It's
-                    only a keystroke away.
+                    We focus on ergonomics and meeting you where you work.
+                    It&apos;s only a keystroke away.
                   </Typography>
                   <Box
                     sx={{ display: "flex", justifyContent: "space-between" }}
@@ -248,8 +248,8 @@ function Services() {
                     marginTop="8px"
                     marginBottom="8px"
                   >
-                    We focus on ergonomics and meeting you where you work. It's
-                    only a keystroke away.
+                    We focus on ergonomics and meeting you where you work.
+                    It&apos;s only a keystroke away.
                   </Typography>
                   <Box
                     sx={{ display: "flex", justifyContent: "space-between" }}
@@ -391,8 +391,8 @@ function Services() {
                     marginTop="8px"
                     marginBottom="8px"
                   >
-                    We focus on ergonomics and meeting you where you work. It's
-                    only a keystroke away.
+                    We focus on ergonomics and meeting you where you work.
+                    It&apos;s only a keystroke away.
                   </Typography>
                   <Box
                     sx={{ display: "flex", justifyContent: "space-between" }}
