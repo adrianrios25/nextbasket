@@ -1,10 +1,11 @@
 "use client";
 import * as React from "react";
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 import TopItems from "@/components/TopItems/TopItems";
 import DynamicItems from "@/components/DynamicItems/DynamicItems";
-import Typography from "@mui/material/Typography";
+import Services from "@/components/Services/Services";
 export default function HomePage() {
   return (
     <>
@@ -38,6 +39,7 @@ export default function HomePage() {
           Problems trying to resolve the conflict between
         </Typography>
         <DynamicItems showLoadmoreBtn={true} />
+        <Services />
       </Box>
     </>
   );
