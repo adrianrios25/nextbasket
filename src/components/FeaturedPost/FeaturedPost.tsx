@@ -1,5 +1,4 @@
 import React from "react";
-
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
@@ -61,6 +60,7 @@ function Services() {
                   padding="4px 16px"
                   top="20px"
                   left="20px"
+                  borderRadius={"3px"}
                 >
                   NEW
                 </Typography>
@@ -194,6 +194,7 @@ function Services() {
                   padding="4px 16px"
                   top="20px"
                   left="20px"
+                  borderRadius={"3px"}
                 >
                   NEW
                 </Typography>
@@ -337,6 +338,7 @@ function Services() {
                   padding="4px 16px"
                   top="20px"
                   left="20px"
+                  borderRadius={"3px"}
                 >
                   NEW
                 </Typography>

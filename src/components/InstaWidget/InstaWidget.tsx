@@ -13,9 +13,10 @@ import gal9 from "../../../public/gallery/gal9.png";
 function InstaWidget() {
   return (
     <Box
-      sx={{ display: { xs: "block", md: "grid" }, mt: "80px" }}
+      sx={{ display: "grid", mt: "80px" }}
       gridTemplateColumns="repeat(12, 1fr)"
       gap={1}
+      marginBottom={"128px"}
     >
       <Box gridColumn="span 4" sx={{ height: "100%" }}>
         <Image src={gal1} alt="clock icon" />

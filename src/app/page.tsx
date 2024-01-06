@@ -2,13 +2,14 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-
 import TopItems from "@/components/TopItems/TopItems";
 import DynamicItems from "@/components/DynamicItems/DynamicItems";
 import Services from "@/components/Services/Services";
 import FeaturedPost from "@/components/FeaturedPost/FeaturedPost";
 import Feedback from "@/components/Feedback/Feedback";
 import InstaWidget from "@/components/InstaWidget/InstaWidget";
+import BottomBanner from "@/components/BottomBanner/BottomBanner";
+import SocialSection from "@/components/SocialSection/SocialSection";
 export default function HomePage() {
   return (
     <>
@@ -56,6 +57,8 @@ export default function HomePage() {
             <InstaWidget />
           </Box>
         </Box>
+        <BottomBanner />
+        <SocialSection />
       </Box>
     </>
   );
