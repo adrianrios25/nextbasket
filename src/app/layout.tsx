@@ -5,10 +5,9 @@ import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 export const metadata = {
-  title: "Next.js App Router + Material UI v5",
-  description: "Next.js App Router + Material UI v5",
+  title: "Next Basket",
+  description: "Next Basket Online Shopping",
 };
 import { ReduxProviders } from "./globalRedux/provider";
 export default function RootLayout({
