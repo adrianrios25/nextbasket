@@ -53,7 +53,14 @@ function DynamicItems({
               key={product.title}
             >
               <MUILink href={`/products/${product.id}`}>
-                <Card sx={{ maxWidth: 345, height: "100%", boxShadow: "none" }}>
+                <Card
+                  sx={{
+                    maxWidth: 345,
+                    height: "100%",
+                    boxShadow: "none",
+                    margin: "auto",
+                  }}
+                >
                   <CardActionArea>
                     <CardMedia
                       component="img"

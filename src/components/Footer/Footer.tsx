@@ -12,20 +12,20 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { withStyles } from "@mui/material";
 
-function SocialSection() {
+function Footer({ socialsectionbg }: { socialsectionbg: string }) {
+  const socialSectionStyle = {
+    minHeight: "174px",
+    display: "flex",
+    backgroundColor: socialsectionbg,
+    justifyContent: { xs: "center", md: "space-between" },
+    flexFlow: { xs: "column", md: "row" },
+    alignItems: { xs: "start", md: "center" },
+    paddingX: { xs: "45px", md: "140px" },
+    borderBottom: "1px solid #FAFAFA",
+  };
   return (
     <>
-      <Box
-        sx={{
-          minHeight: "174px",
-          display: "flex",
-          backgroundColor: "#FAFAFA",
-          justifyContent: { xs: "center", md: "space-between" },
-          flexFlow: { xs: "column", md: "row" },
-          alignItems: { xs: "start", md: "center" },
-          paddingX: { xs: "45px", md: "140px" },
-        }}
-      >
+      <Box sx={socialSectionStyle}>
         <Typography
           variant="subtitle2"
           fontWeight={700}
@@ -340,4 +340,4 @@ function SocialSection() {
   );
 }
 
-export default SocialSection;
+export default Footer;

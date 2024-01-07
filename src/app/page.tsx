@@ -9,7 +9,7 @@ import FeaturedPost from "@/components/FeaturedPost/FeaturedPost";
 import Feedback from "@/components/Feedback/Feedback";
 import InstaWidget from "@/components/InstaWidget/InstaWidget";
 import BottomBanner from "@/components/BottomBanner/BottomBanner";
-import SocialSection from "@/components/SocialSection/SocialSection";
+import Footer from "@/components/Footer/Footer";
 export default function HomePage() {
   return (
     <>
@@ -58,7 +58,7 @@ export default function HomePage() {
           </Box>
         </Box>
         <BottomBanner />
-        <SocialSection />
+        <Footer socialsectionbg="#FAFAFA" />
       </Box>
     </>
   );

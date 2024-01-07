@@ -27,6 +27,8 @@ import { addToWishlist } from "@/app/globalRedux/Features/wishlistSlice";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Rating from "@mui/material/Rating";
+import Logos from "@/components/Logos/Logos";
+import Footer from "@/components/Footer/Footer";
 function Product({ params }: { params: { id: string } }) {
   const dispatch = useDispatch<AppDispatch>();
   const product = useSelector(
@@ -170,10 +172,11 @@ function Product({ params }: { params: { id: string } }) {
               <Box sx={{ margin: "16px" }}>
                 <Image
                   src={product.thumbnail}
-                  width={100}
-                  height={150}
+                  width={"100"}
+                  height={"150"}
                   objectFit="contain"
                   alt="Picture of the author"
+                  style={{ height: "auto" }}
                 />
               </Box>
             )}
@@ -192,15 +195,24 @@ function Product({ params }: { params: { id: string } }) {
             >
               {product.title}
             </Typography>
-            <Typography
-              variant="subtitle2"
-              fontWeight={700}
-              color="#252B42"
-              fontSize="16px"
-              marginBottom={"14px"}
-            >
-              <Rating name="read-only" value={product.rating} readOnly />
-            </Typography>
+            <Box>
+              <Rating
+                name="read-only"
+                value={product.rating}
+                readOnly
+                sx={{ marginTop: "-4px" }}
+              />
+              <Typography
+                variant="subtitle2"
+                fontWeight={700}
+                color="#737373"
+                fontSize="14px"
+                marginBottom={"14px"}
+                marginLeft={"10px"}
+              >
+                10 Reviews
+              </Typography>
+            </Box>
             <Typography
               variant="subtitle2"
               fontWeight={700}
@@ -210,7 +222,6 @@ function Product({ params }: { params: { id: string } }) {
             >
               ${product.price}
             </Typography>
-
             <Typography
               variant="subtitle2"
               fontWeight={700}
@@ -225,7 +236,6 @@ function Product({ params }: { params: { id: string } }) {
                 <span style={{ color: "#23A6F0" }}>Not Available</span>
               )}
             </Typography>
-
             <Box
               display="flex"
               borderTop="1px solid #212121"
@@ -365,9 +375,37 @@ function Product({ params }: { params: { id: string } }) {
             />
           </Box>
         </Box>
-
-        <DynamicItems showLoadmoreBtn={false} />
       </Box>
+      <Box
+        sx={{
+          padding: { xs: "8px 14px", md: "8px 100px" },
+          backgroundColor: "#FAFAFA",
+        }}
+      >
+        <Box
+          sx={{
+            padding: { xs: "8px 14px", md: "8px 60px" },
+            backgroundColor: "#FAFAFA",
+            marginTop: "48px",
+            marginBottom: "-72px",
+          }}
+        >
+          <Typography
+            variant="h2"
+            fontWeight={700}
+            color="#252B42"
+            fontSize="24px"
+            marginBottom={"24px"}
+          >
+            BESTSELLER PRODUCTS
+          </Typography>
+          <hr />
+        </Box>
+        <DynamicItems showLoadmoreBtn={false} />
+        <Logos />
+      </Box>
+
+      <Footer socialsectionbg="#FFF" />
       <Snackbar
         open={openSnackBar}
         autoHideDuration={6000}
